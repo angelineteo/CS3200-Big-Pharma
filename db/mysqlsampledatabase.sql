@@ -6,7 +6,315 @@ Name: MySQL Sample Database classicmodels
 Link: http://www.mysqltutorial.org/mysql-sample-database.aspx
 Version 3.1
 + changed data type from DOUBLE to DECIMAL for amount columns
-Version 3.0
+USE pharmacy;
+
+CREATE TABLE products (
+prod_id integer,
+prod_name varchar(50));
+
+
+CREATE TABLE MANUFACTURER_DATA (
+	id VARCHAR(50),
+	name VARCHAR(50),
+	phoneNum VARCHAR(50),
+	street VARCHAR(50),
+	city VARCHAR(50),
+	zip VARCHAR(50),
+	state VARCHAR(50),
+	PRIMARY KEY (id)
+);
+
+INSERT INTO MANUFACTURER_DATA
+VALUES ('69056694', 'New Sun Inc.', '3130187058', 'Sutteridge', 'Boca Raton', '33432', 'Florida'),
+('48655036', 'Ventura International LTD', '6647808229', 'Arapahoe', 'Zephyrhills', '33543', 'Florida'),
+('84011224', 'Wyeth Pharmaceuticals Inc., a subsidiary of Pfizer', '9795515946', 'Fulton', 'Hollywood',
+'33028', 'Florida'),
+('71244832', 'Apotheca Company', '5197017535', 'Dottie', 'Boston', '02104', 'Massachusetts'),
+('27222031', 'American Welding & Gas', '3573484106', 'Dexter', 'Huntsville', '35815', 'Alabama'),
+('68019103', 'NATURE REPUBLIC CO., LTD.', '9599814477', 'Westridge', 'Wichita', '67220', 'Kansas'),
+('04875673', 'Merck Sharp & Dohme Corp.', '6667382685', '7th', 'Naples', '33963', 'Florida'),
+('76080891', 'ColgatePalmolive Canada', '1518998684', 'Randy', 'Rochester', '14624', 'New York'),
+('35007505', 'PDRx Pharmaceuticals, Inc.', '4793766284', 'Forest', 'Washington', '20430',
+'District of Columbia'),
+('87462507', 'Nelco Laboratories, Inc.', '3680653910', 'Buell', 'Phoenix', '85025', 'Arizona'),
+('30801931', 'Compressed Gas Solutions Inc', '4472209300', 'Amoth', 'Memphis', '38104', 'Tennessee'),
+('25905013', 'AvKARE, Inc.', '9478816151', 'Linden', 'Concord', '94522', 'California'),
+('98202036', 'Cixi Zhixin Bird Cleancare PRODUCT_DATACo., Ltd.', '1344275197', 'Garrison',
+'Evansville', '47747', 'Indiana'),
+('77900102', 'WestWard Pharmaceutical Corp', '3308026265', 'Kipling', 'Denver', '80291', 'Colorado'),
+('60033380', 'Ranbaxy Laboratories Inc', '4739640579', 'Waywood', 'Ocala', '34479', 'Florida'),
+('67459729', 'Rebel Distributors Corp', '8489733988', 'Clyde Gallagher', 'Chicago', '60619', 'Illinois'),
+('82397062', 'Hospira, Inc.', '4702697506', 'Shelley', 'Carol Stream', '60158', 'Illinois'),
+('26804702', 'Franklin Pharmaceutical LLC', '7404797602', 'Sachs', 'Wichita', '67230', 'Kansas'),
+('06401397', 'Roxane Laboratories, Inc', '7543945591', 'Packers', 'North Hollywood', '91606', 'California'),
+('81594703', 'Rebel Distributors Corp', '2622139936', 'Messerschmidt', 'Washington', '20226', 'District of Columbia'),
+('37955198', 'Amerisource Bergen', '8835463483', 'Mallard', 'York', '17405', 'Pennsylvania'),
+('33893978', 'Roxane Laboratories, Inc', '3859592495', 'Straubel', 'Albany', '12262', 'New York'),
+('72854090', 'Konsyl Pharmaceuticals, Inc.', '8448441187', 'Scofield', 'Charleston', '25389', 'West Virginia'),
+('07728404', 'HyVee Inc', '6510361191', 'Magdeline', 'Birmingham', '35290', 'Alabama'),
+('72151999', 'Lake Erie Medical DBA Quality Care Products LLC', '2887075015', 'Lakewood Gardens', 'Champaign',
+'61825', 'Illinois');
+
+create table INSURER_DATA (
+	IID VARCHAR(50),
+	name VARCHAR(50),
+	phoneNum VARCHAR(50),
+	street VARCHAR(50),
+	city VARCHAR(50),
+	state VARCHAR(50),
+	zip VARCHAR(50),
+	country VARCHAR(50),
+	PRIMARY KEY (IID)
+);
+
+insert into INSURER_DATA
+values ('73358355', 'Home Care Medical, Inc', '3162969537', '5229 Golden Leaf Circle', 'New Orleans', 'Louisiana', '70183', 'United States');
+insert into INSURER_DATA
+values ('18472946', 'Camber Pharmaceuticals', '9090929268', '27 Fair Oaks Drive', 'Minneapolis', 'Minnesota', '55448', 'United States');
+insert into INSURER_DATA
+values ('89742074', 'Janssen Biotech, Inc.', '3465859656', '820 Harper Pass', 'Fort Worth', 'Texas', '76129', 'United States');
+insert into INSURER_DATA
+values ('82676924', 'Mckesson', '1276395548', '51132 Express Hill', 'Oklahoma City', 'Oklahoma', '73142', 'United States');
+insert into INSURER_DATA
+values ('15785322', 'Dispensing Solutions, Inc.', '7497087808', '6 Fremont Point', 'Athens', 'Georgia', '30610', 'United States');
+insert into INSURER_DATA
+values ('96452005', 'Bryant Ranch Prepack', '5664012703', '87 Sheridan Circle', 'Saint Louis', 'Missouri', '63150', 'United States');
+insert into INSURER_DATA
+values ('75366475', 'Walgreens', '3191553711', '1296 Elka Place', 'Dallas', 'Texas', '75358', 'United States');
+insert into INSURER_DATA
+values ('30432127', 'Hospira, Inc.', '3581858364', '5148 Lerdahl Circle', 'San Francisco', 'California', '94105', 'United States');
+insert into INSURER_DATA
+values ('33626440', 'BioActive Nutritional, Inc.', '7895130257', '55126 Division Point', 'Virginia Beach', 'Virginia', '23464', 'United States');
+insert into INSURER_DATA
+values ('02474940', 'Preferred Pharmaceuticals, Inc', '6710643712', '2050 Westridge Place', 'Lansing', 'Michigan', '48912', 'United States');
+insert into INSURER_DATA
+values ('25407010', 'Conopco Inc. d-b-a Unilever', '2913432544', '11 Merry Point', 'Rochester', 'New York', '14609', 'United States');
+insert into INSURER_DATA
+values ('69304653', 'Newton Laboratories, Inc.', '1330963495', '171 Lukken Lane', 'Denver', 'Colorado', '80249', 'United States');
+insert into INSURER_DATA
+values ('02664439', 'Geiss, Destin & Dunn, Inc.', '2576066639', '5 Packers Hill', 'Metairie', 'Louisiana', '70033', 'United States');
+insert into INSURER_DATA
+values ('09465972', 'Mylan Pharmaceuticals Inc.', '7621074265', '1999 Tony Road', 'Shreveport', 'Louisiana', '71105', 'United States');
+insert into INSURER_DATA
+values ('55760345', 'Native Remedies, LLC', '4365843407', '976 Fordem Lane', 'Hartford', 'Connecticut', '06152', 'United States');
+insert into INSURER_DATA
+values ('42970679', 'REMEDYREPACK INC.', '4448225034', '228 Maryland Avenue', 'Indianapolis', 'Indiana', '46216', 'United States');
+insert into INSURER_DATA
+values ('87682611', 'STAT Rx USA LLC', '9151390591', '632 Hayes Circle', 'San Antonio', 'Texas', '78265', 'United States');
+insert into INSURER_DATA
+values ('02762231', 'Pharmacia and Upjohn Company', '2139765906', '903 Ronald Regan Junction', 'Washington', 'District of Columbia', '20231', 'United States');
+insert into INSURER_DATA
+values ('71767652', 'WalMart Stores Inc', '1587867795', '55 Miller Point', 'Topeka', 'Kansas', '66622', 'United States');
+insert into INSURER_DATA
+values ('50017711', 'Ventura Corporation LTD', '3451388295', '42 Messerschmidt Pass', 'Greensboro', 'North Carolina', '27455', 'United States');
+insert into INSURER_DATA
+values ('69606427', 'Church & Dwight Co., Inc.', '2552956330', '9 Luster Junction', 'Seattle', 'Washington', '98127', 'United States');
+insert into INSURER_DATA
+values ('62893790', 'Insight Pharmaceuticals', '2341404250', '05385 Steensland Lane', 'Topeka', 'Kansas', '66622', 'United States');
+insert into INSURER_DATA
+values ('51858855', 'H2O Plus', '4447177107', '4373 Carpenter Point', 'Fresno', 'California', '93762', 'United States');
+insert into INSURER_DATA
+values ('01161407', 'Teva Pharmaceuticals USA Inc', '4074580076', '32 Hudson Point', 'El Paso', 'Texas', '79955', 'United States');
+insert into INSURER_DATA
+values ('07094794', 'Sandoz Inc', '9773518233', '63318 Bay Terrace', 'West Palm Beach', 'Florida', '33421', 'United States');
+
+
+create table CUST_DATA (
+	cust_id VARCHAR(50),
+	firstName VARCHAR(50),
+	lastName VARCHAR(50),
+	bday DATE,
+	phoneNum VARCHAR(50),
+	street VARCHAR(50),
+	city VARCHAR(50),
+	state VARCHAR(50),
+	zip VARCHAR(50),
+	country VARCHAR(50),
+	insuranceID VARCHAR(50),
+	PRIMARY KEY (cust_id),
+	FOREIGN KEY (insuranceID) REFERENCES INSURER_DATA(IID)
+);
+insert into CUST_DATA
+values ('72135917', 'Karly', 'Bearman', '2001-04-07', '4222787063', '7170 Loomis Crossing', 'Wilkes Barre', 'Pennsylvania', '18768', 'United States', '73358355');
+insert into CUST_DATA
+values ('52555904', 'Georgena', 'MacAless', '1965-08-19', '7385550243', '57812 Londonderry Place', 'Columbia', 'South Carolina', '29208', 'United States', '30432127');
+insert into CUST_DATA
+values ('70214115', 'Reid', 'Von Welldun', '2002-11-08', '4839142884', '3 Esker Street', 'Saint Petersburg', 'Florida', '33705', 'United States', '82676924');
+insert into CUST_DATA
+values ('64707366', 'Brigham', 'Joseff', '2003-07-17', '3609050917', '07 Gale Lane', 'San Jose', 'California', '95108', 'United States', '30432127');
+insert into CUST_DATA
+values ('66415766', 'Vanda', 'Warlaw', '1996-07-09', '1703409189', '07938 Dexter Circle', 'Memphis', 'Tennessee', '38119', 'United States', '73358355');
+insert into CUST_DATA
+values ('98763467', 'Merv', 'Stell', '2004-06-24', '1928882738', '8 Green Terrace', 'Phoenix', 'Arizona', '85015', 'United States', '71767652');
+insert into CUST_DATA
+values ('16232148', 'Garrik', 'Collingdon', '1987-05-04', '6113291192', '31423 Bobwhite Place', 'Raleigh', 'North Carolina', '27615', 'United States', '82676924');
+insert into CUST_DATA
+values ('34419683', 'Ariella', 'Twining', '1938-07-25', '2689561388', '3 Talmadge Circle', 'Greensboro', 'North Carolina', '27409', 'United States', '71767652');
+insert into CUST_DATA
+values ('23035945', 'Dareen', 'Muzzlewhite', '1977-06-27', '2118799036', '71060 Hauk Place', 'Albany', 'New York', '12247', 'United States', '96452005');
+insert into CUST_DATA
+values ('23565515', 'Silvie', 'Haslen', '1948-12-22', '2081025730', '0485 Pine View Avenue', 'Shawnee Mission', 'Kansas', '66276', 'United States', '73358355');
+insert into CUST_DATA
+values ('68202832', 'Selle', 'Rosiello', '1967-11-07', '1968714366', '02 Hauk Court', 'Brooklyn', 'New York', '11247', 'United States', '96452005');
+insert into CUST_DATA
+values ('53403107', 'Zollie', 'Plumptre', '1993-05-24', '2671765319', '08502 Lighthouse Bay Hill', 'Milwaukee', 'Wisconsin', '53234', 'United States', '96452005');
+insert into CUST_DATA
+values ('83464343', 'Ashleigh', 'Salling', '1972-04-21', '5794062470', '8314 Schlimgen Court', 'Houston', 'Texas', '77045', 'United States', '42970679');
+insert into CUST_DATA
+values ('88197715', 'Devinne', 'Hatrey', '1970-08-27', '2376699528', '867 Hansons Place', 'Fresno', 'California', '93750', 'United States', '02762231');
+insert into CUST_DATA
+values ('32936225', 'Seana', 'O''Kennedy', '1989-08-19', '7423513448', '35685 Mosinee Park', 'Fresno', 'California', '93750', 'United States', '30432127');
+insert into CUST_DATA
+values ('28998977', 'Maryl', 'Konzelmann', '1974-09-12', '9725588797', '1498 Melvin Center', 'San Jose', 'California', '95133', 'United States', '73358355');
+insert into CUST_DATA
+values ('94927796', 'Janeta', 'Claridge', '1935-04-05', '0692980943', '3 Dixon Plaza', 'Shawnee Mission', 'Kansas', '66276', 'United States', '30432127');
+insert into CUST_DATA
+values ('11681487', 'Flinn', 'Blabey', '1974-08-24', '7713987570', '1 Jay Crossing', 'Waco', 'Texas', '76711', 'United States', '96452005');
+insert into CUST_DATA
+values ('46620146', 'Fabien', 'Bampford', '1997-05-13', '8949478847', '4557 Towne Place', 'Saint Paul', 'Minnesota', '55127', 'United States', '96452005');
+insert into CUST_DATA
+values ('76449827', 'Arly', 'Pinkstone', '1982-02-26', '3805636977', '92144 Shasta Drive', 'Redwood City', 'California', '94064', 'United States', '55760345');
+insert into CUST_DATA
+values ('86914088', 'Micky', 'Bernardoni', '1961-09-16', '3487190820', '47416 Briar Crest Avenue', 'Portland', 'Oregon', '97255', 'United States', '55760345');
+insert into CUST_DATA
+values ('29757711', 'Marlo', 'Bollard', '1943-03-26', '8677307836', '8486 Buhler Pass', 'South Bend', 'Indiana', '46699', 'United States', '82676924');
+insert into CUST_DATA
+values ('79131611', 'Charin', 'Realph', '1969-07-01', '6298938587', '5570 Hallows Hill', 'Saint Paul', 'Minnesota', '55127', 'United States', '42970679');
+insert into CUST_DATA
+values ('04376327', 'Derek', 'Lamke', '1974-04-01', '8967893041', '1 Hoard Way', 'Buffalo', 'New York', '14205', 'United States', '02762231');
+insert into CUST_DATA
+values ('33721325', 'Wren', 'Whotton', '1991-07-12', '6876886500', '1 8th Point', 'Dallas', 'Texas', '75323', 'United States', '82676924');
+
+
+create table  PRODUCT_DATA(
+	productID VARCHAR(50),
+	name VARCHAR(50),
+	m_ID VARCHAR (50),
+	insurance_ID VARCHAR (50),
+	PRIMARY KEY (productID),
+	FOREIGN KEY (m_ID) REFERENCES MANUFACTURER_DATA (id),
+	FOREIGN KEY (insurance_ID) REFERENCES INSURER_DATA (IID)
+);
+insert into  PRODUCT_DATA values ('98150501', 'Naftin', '69056694', '73358355');
+insert into  PRODUCT_DATA values ('22553627', 'Bromfenac', '72151999', '07094794');
+insert into  PRODUCT_DATA values ('97460740', 'Speed Stick', '48655036', '50017711');
+insert into  PRODUCT_DATA values ('34149711', 'PSEUDO TIME PE', '07728404', '02664439');
+insert into  PRODUCT_DATA values ('76122068', 'Testim', '84011224', '87682611');
+insert into  PRODUCT_DATA values ('14998812', 'Deferoxamine Mesylate', '76080891','55760345');
+insert into  PRODUCT_DATA values ('95950609', 'donepezil hydrochloride', '30801931', '09465972');
+insert into  PRODUCT_DATA values ('14817481', 'Meclizine Hydrochloride','72151999', '69304653');
+insert into  PRODUCT_DATA values ('83114115', 'BOTANICAL FRESH BB', '84011224', '25407010');
+insert into  PRODUCT_DATA values ('87039047', 'Amoxicillin and Calvulanate Potassium', '30801931', '09465972');
+insert into  PRODUCT_DATA values ('45255649', '4 in 1 Pressed Mineral SPF 15 Medium Dark','30801931', '55760345');
+insert into  PRODUCT_DATA values ('99653576', 'Lipotox','87462507', '87682611');
+insert into  PRODUCT_DATA values ('07244965', 'topcare daytime nitetime', '84011224', '02664439');
+insert into  PRODUCT_DATA values ('08307171', 'Prednisone', '07728404', '50017711');
+insert into  PRODUCT_DATA values ('80653844', 'Mycophenolic Acid', '07728404', '07094794');
+insert into  PRODUCT_DATA values ('39723541', 'Atenolol and Chlorthalidone', '48655036', '73358355');
+insert into  PRODUCT_DATA values ('68769625', 'Insomulex', '87462507', '69304653');
+insert into  PRODUCT_DATA values ('72012752', 'Pfizerpen', '06401397', '69304653');
+insert into  PRODUCT_DATA values ('68464320', 'Delestrogen', '06401397', '09465972');
+insert into  PRODUCT_DATA values ('10179360', 'Pulsatilla Kit Refill', '76080891', '55760345');
+insert into  PRODUCT_DATA values ('16807016', 'Loperamide Hydrochloride', '76080891', '87682611');
+insert into  PRODUCT_DATA values ('48712968', 'Synaptol', '87462507', '02664439');
+insert into  PRODUCT_DATA values ('58701951', 'Oxygen', '07728404', '50017711');
+insert into  PRODUCT_DATA values ('13214192', 'Tag Alder', '48655036', '07094794');
+insert into  PRODUCT_DATA values ('65844256', 'Quinapril Hydrochloride', '69056694', '73358355');
+
+
+create table PRESCRIPTION_DATA(
+	p_id VARCHAR(50),
+	product_ID VARCHAR(50),
+	c_ID VARCHAR(50),
+	PRIMARY KEY (p_id),
+	FOREIGN KEY (product_ID) REFERENCES  PRODUCT_DATA(productID),
+	FOREIGN KEY (c_ID) REFERENCES CUST_DATA(cust_id)
+);
+insert into PRESCRIPTION_DATA
+values ('80132001', '98150501', '72135917');
+insert into PRESCRIPTION_DATA
+values ('45332314', '34149711', '33721325');
+insert into PRESCRIPTION_DATA
+values ('97263667', '98150501', '72135917');
+insert into PRESCRIPTION_DATA
+values ('55696673', '83114115', '29757711');
+insert into PRESCRIPTION_DATA
+values ('51552558', '48712968', '83464343');
+insert into PRESCRIPTION_DATA
+values ('13770795', '13214192', '83464343');
+insert into PRESCRIPTION_DATA
+values ('11593202', '48712968', '46620146');
+insert into PRESCRIPTION_DATA
+values ('88994826', '83114115', '16232148');
+insert into PRESCRIPTION_DATA
+values ('82388597', '34149711', '33721325');
+insert into PRESCRIPTION_DATA
+values ('98176631', '07244965', '16232148');
+insert into PRESCRIPTION_DATA
+values ('76798768', '98150501', '33721325');
+insert into PRESCRIPTION_DATA
+values ('62506645', '13214192', '79131611');
+insert into PRESCRIPTION_DATA
+values ('45090106', '34149711', '29757711');
+insert into PRESCRIPTION_DATA
+values ('09966692', '83114115','83464343');
+insert into PRESCRIPTION_DATA
+values ('90502633', '48712968', '23565515');
+insert into PRESCRIPTION_DATA
+values ('39274376', '83114115', '34419683');
+insert into PRESCRIPTION_DATA
+values ('09879353', '98150501', '23565515');
+insert into PRESCRIPTION_DATA
+values ('53448800', '34149711', '34419683');
+insert into PRESCRIPTION_DATA
+values ('38563246', '48712968', '34419683');
+insert into PRESCRIPTION_DATA
+values ('92226525', '07244965', '23565515');
+insert into PRESCRIPTION_DATA
+values ('36358314', '07244965', '79131611');
+insert into PRESCRIPTION_DATA
+values ('80599234', '13214192', '79131611');
+insert into PRESCRIPTION_DATA
+values ('64008611', '48712968', '46620146');
+insert into PRESCRIPTION_DATA
+values ('44854483', '07244965', '23565515');
+insert into PRESCRIPTION_DATA
+values ('61713889', '83114115', '46620146');
+
+
+create table INGREDIENT_DATA(
+	ingredient_ID VARCHAR(50),
+	name VARCHAR(50),
+	product_ID VARCHAR(50),
+	PRIMARY KEY (ingredient_ID),
+	FOREIGN KEY (product_ID) REFERENCES PRODUCT_DATA(productID)
+);
+insert into INGREDIENT_DATA values ('55760085', 'Pseudoephedrine Hydrochloride', '65844256');
+insert into INGREDIENT_DATA values ('60491280', 'Potassium Chloride', '13214192');
+insert into INGREDIENT_DATA values ('69051536', 'levothyroxine sodium', '76122068');
+insert into INGREDIENT_DATA values ('22907591', 'Heparin Sodium', '34149711');
+insert into INGREDIENT_DATA values ('17701594', 'Avobenzone, Octisalate and Octocrylene', '80653844');
+insert into INGREDIENT_DATA values ('22322217', 'Anastrozole', '99653576');
+insert into INGREDIENT_DATA values ('63887605', 'Avobenzone, Homosalate, Octisalate, and Octocrylen', '45255649');
+insert into INGREDIENT_DATA values ('03780019', 'AVOBENZONE OCTOCRYLENE OXYBENZONE', '68769625');
+insert into INGREDIENT_DATA values ('44285558', 'Hydroxyzine Hydrochloride', '80653844');
+insert into INGREDIENT_DATA values ('60883122', 'Octinoxate', '48712968');
+insert into INGREDIENT_DATA values ('06512627', 'OATMEAL', '87039047');
+insert into INGREDIENT_DATA values ('81270495', 'Meperidine Hydrochloride', '34149711');
+insert into INGREDIENT_DATA values ('64242376', 'ASCORBIC ACID, CHOLECALCIFEROL', '45255649');
+insert into INGREDIENT_DATA values ('31636977', 'POVIDONEIODINE', '87039047');
+insert into INGREDIENT_DATA values ('45879309', 'RAMIPRIL', '68769625');
+insert into INGREDIENT_DATA values ('66696462', 'Nifedipine', '87039047');
+insert into INGREDIENT_DATA values ('96571494', 'Zolpidem Tartrate', '34149711');
+insert into INGREDIENT_DATA values ('13259277', 'Naproxen Sodium', '76122068');
+insert into INGREDIENT_DATA values ('71408090', 'Dextromethorphan HBr, Guaifenesin', '99653576');
+insert into INGREDIENT_DATA values ('49516249', 'Tobramycin', '87039047');
+insert into INGREDIENT_DATA values ('67719188', 'Conium maculatum, Dulcamara', '45255649');
+insert into INGREDIENT_DATA values ('36234696', 'POVIDONEIODINE', '07244965');
+insert into INGREDIENT_DATA values ('40328315', 'Sodium Fluoride, hydrofluoric acid', '48712968');
+insert into INGREDIENT_DATA values ('54503505', 'PENTOXIFYLLINE', '13214192');
+insert into INGREDIENT_DATA values ('17889889', 'Stemphylium spp', '65844256');
+ 3.0
 + changed DATETIME to DATE for some colunmns
 Version 2.0
 + changed table type from MyISAM to InnoDB
