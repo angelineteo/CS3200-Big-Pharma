@@ -1,5 +1,9 @@
 # MySQL + Flask Boilerplate Project
-
+Video explanation:
+note we didn't end up using blue prints because of file path issues that didn't allow them to run. This is not updated in the video because it was 
+a last minute change. Thus all routes were slightly changed but otherwise have the same purposes with the addition of a POST route for the login screen and 
+the removal of some routes. 
+https://youtu.be/VNb0Ntry-Uw
 This repo contains a boilerplate setup for spinning up 2 docker containers: 
 1. A MySQL 8 container for obvious reasons
 1. A Python Flask container to implement a REST API
