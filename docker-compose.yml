@@ -43,6 +43,43 @@ services:
 
     restart: unless-stopped
     
+
+  ##################################################################
+  # configure the mysql container
+  db:
+    # We are using the base image of MySQL v.8
+    image: mysql:8
+
+    volumes:
+      # anything in (or mounted in) /docker-entrypoint-initdb.d in the container 
+      # will automatically be executed when the container is created
+      - ./db:/docker-entrypoint-initdb.d/:ro
+
+    ports:
+      # mapping host port 3200 to container port 3306
+      - 3306:3306
+
+    restart: unless-stopped
+    
+    # Setting up some environment variables for secrets.
+    # Here we are setting the root password
+    # as well as creating an additional user called 
+    # webapp.  webapp user password is stored in a secret 
+    # file as well. 
+    environment:
+      MYSQL_USER: webapp
+      MYSQL_PASSWORD_FILE: /run/secrets/secret_db_pw
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/secret_db_root_pw
+    
+    secrets:
+      - secret_db_pw
+      - secret_db_root_pw
+
+secrets:
+  secret_db_pw:
+    file: ./secrets/db_password.txt
+  secret_db_root_pw:
+    file: ./secrets/db_root_password.txt
     # Setting up some environment variables for secrets.
     # Here we are setting the root password
     # as well as creating an additional user called 
